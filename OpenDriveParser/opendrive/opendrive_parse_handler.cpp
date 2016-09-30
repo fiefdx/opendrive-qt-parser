@@ -5,8 +5,10 @@
 
 // Project includes
 #include "opendrive_parse_handler.hpp"
+#include "opendrive/opendrive_map.hpp"
 
-OpenDriveParseHandler::OpenDriveParseHandler() {
+OpenDriveParseHandler::OpenDriveParseHandler(OpenDriveMap* map) :
+  map_(map) {
 
 }
 

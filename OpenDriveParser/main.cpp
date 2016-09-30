@@ -1,9 +1,13 @@
-#include "opendrive_parser.hpp"
+// Qt includes
 #include <QApplication>
 
-int main(int argc, char *argv[])
-{
+// Project includes
+#include "opendrive_parser.hpp"
+#include "opendrive/opendrive_map.hpp"
+
+int main(int argc, char *argv[]) {
   QApplication a(argc, argv);
+  OpenDriveMap map;
 
   QString test_map = "";
 
@@ -11,7 +15,7 @@ int main(int argc, char *argv[])
   odp.show();
 
   odp.set_map_file(test_map);
-  odp.parse_map_file(nullptr);
+  odp.parse_map_file(&map);
 
   return a.exec();
 }

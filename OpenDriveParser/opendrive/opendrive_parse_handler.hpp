@@ -5,9 +5,14 @@
 #include <QString>
 #include <QXmlDefaultHandler>
 
+// Project includes
+#include "opendrive/opendrive_map.hpp"
+
+class OpenDriveMap;
+
 class OpenDriveParseHandler : public QXmlDefaultHandler {
  public:
-  OpenDriveParseHandler();
+  OpenDriveParseHandler(OpenDriveMap* map);
 
   bool startElement(const QString &namespaceURI, const QString &localName,
                     const QString &qName, const QXmlAttributes &atts) override;
@@ -18,6 +23,9 @@ class OpenDriveParseHandler : public QXmlDefaultHandler {
     Q_UNUSED(recipient);
     return false;  // unsupported type
   }
+
+ private:
+  OpenDriveMap* map_; // we do not own this; do not delete it!
 };
 
 #endif // OPENDRIVEPARSEHANDLER_H

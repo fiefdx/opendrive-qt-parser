@@ -33,7 +33,7 @@ void OpenDriveParser::set_map_file(QString map_file) {
 bool OpenDriveParser::parse_map_file(OpenDriveMap* map) {
   QXmlSimpleReader xml_reader;
   QXmlInputSource* input_source = new QXmlInputSource(opendrive_map_file_);
-  OpenDriveParseHandler* parse_handler = new OpenDriveParseHandler();
+  OpenDriveParseHandler* parse_handler = new OpenDriveParseHandler(map);
   xml_reader.setContentHandler(parse_handler);
   xml_reader.setErrorHandler(parse_handler);
 
