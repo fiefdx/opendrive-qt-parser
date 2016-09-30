@@ -17,5 +17,7 @@ int main(int argc, char *argv[]) {
   odp.set_map_file(test_map);
   odp.parse_map_file(&map);
 
+  map.print_map();
+
   return a.exec();
 }

@@ -11,6 +11,8 @@ class OpenDriveMap {
   OpenDriveMap();
   ~OpenDriveMap();
 
+  void print_map();
+
   OpenDriveMapHeader* header_ = nullptr;
 };
 

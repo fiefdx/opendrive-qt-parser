@@ -12,8 +12,7 @@ namespace Ui {
 class OpenDriveParser;
 }
 
-class OpenDriveParser : public QMainWindow
-{
+class OpenDriveParser : public QMainWindow {
   Q_OBJECT
 
 public:

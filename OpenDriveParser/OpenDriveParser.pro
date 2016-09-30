@@ -15,15 +15,17 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        opendrive_parser.cpp \
+    opendrive_parser.cpp \
     opendrive/opendrive_parse_handler.cpp \
     opendrive/map_elements/opendrive_map_header.cpp \
-    opendrive/opendrive_map.cpp
+    opendrive/opendrive_map.cpp \
+    opendrive/opendrive_parse_util.cpp
 
 HEADERS  += \
+    opendrive_parser.hpp \
     opendrive/opendrive_parse_handler.hpp \
     opendrive/map_elements/opendrive_map_header.hpp \
-    opendrive_parser.hpp \
-    opendrive/opendrive_map.hpp
+    opendrive/opendrive_map.hpp \
+    opendrive/opendrive_parse_util.hpp
 
 FORMS    += opendrive_parser.ui
