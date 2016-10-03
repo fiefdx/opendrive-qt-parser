@@ -1,0 +1,11 @@
+#ifndef OPENDRIVEROADLANEMARKTYPELINE_HPP
+#define OPENDRIVEROADLANEMARKTYPELINE_HPP
+
+
+class OpenDriveRoadLaneMarkTypeLine
+{
+public:
+  OpenDriveRoadLaneMarkTypeLine();
+};
+
+#endif // OPENDRIVEROADLANEMARKTYPELINE_HPP

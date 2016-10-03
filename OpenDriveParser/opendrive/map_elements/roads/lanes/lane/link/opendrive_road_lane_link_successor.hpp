@@ -1,0 +1,11 @@
+#ifndef OPENDRIVEROADLANELINKSUCCESSOR_HPP
+#define OPENDRIVEROADLANELINKSUCCESSOR_HPP
+
+
+class OpenDriveRoadLaneLinkSuccessor
+{
+public:
+  OpenDriveRoadLaneLinkSuccessor();
+};
+
+#endif // OPENDRIVEROADLANELINKSUCCESSOR_HPP

@@ -1,0 +1,11 @@
+#ifndef OPENDRIVEROADOBJECTOUTLINECORNERLOCAL_HPP
+#define OPENDRIVEROADOBJECTOUTLINECORNERLOCAL_HPP
+
+
+class OpenDriveRoadObjectOutlineCornerLocal
+{
+public:
+  OpenDriveRoadObjectOutlineCornerLocal();
+};
+
+#endif // OPENDRIVEROADOBJECTOUTLINECORNERLOCAL_HPP

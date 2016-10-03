@@ -1,0 +1,11 @@
+#ifndef OPENDRIVEROADOBJECTPARKINGSPACE_HPP
+#define OPENDRIVEROADOBJECTPARKINGSPACE_HPP
+
+
+class OpenDriveRoadObjectParkingSpace
+{
+public:
+  OpenDriveRoadObjectParkingSpace();
+};
+
+#endif // OPENDRIVEROADOBJECTPARKINGSPACE_HPP
