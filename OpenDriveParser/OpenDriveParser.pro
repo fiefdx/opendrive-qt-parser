@@ -86,7 +86,9 @@ SOURCES += main.cpp\
     opendrive/map_elements/junctiongroup/opendrive_junction_group_reference.cpp \
     opendrive/map_elements/station/opendrive_station.cpp \
     opendrive/map_elements/station/platform/opendrive_station_platform.cpp \
-    opendrive/map_elements/station/platform/opendrive_station_platform_segment.cpp
+    opendrive/map_elements/station/platform/opendrive_station_platform_segment.cpp \
+    opendrive/map_elements/roads/objects/opendrive_road_objects.cpp \
+    opendrive/map_elements/roads/signals/opendrive_road_signals.cpp
 
 HEADERS  += \
     opendrive_parser.hpp \
@@ -160,6 +162,8 @@ HEADERS  += \
     opendrive/map_elements/junctiongroup/opendrive_junction_group_reference.hpp \
     opendrive/map_elements/station/opendrive_station.hpp \
     opendrive/map_elements/station/platform/opendrive_station_platform.hpp \
-    opendrive/map_elements/station/platform/opendrive_station_platform_segment.hpp
+    opendrive/map_elements/station/platform/opendrive_station_platform_segment.hpp \
+    opendrive/map_elements/roads/objects/opendrive_road_objects.hpp \
+    opendrive/map_elements/roads/signals/opendrive_road_signals.hpp
 
 FORMS    += opendrive_parser.ui
