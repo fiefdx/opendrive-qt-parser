@@ -1,7 +1,6 @@
 #include "opendrive_junction.hpp"
 
-OpenDriveJunction::OpenDriveJunction()
-{
+OpenDriveJunction::OpenDriveJunction() : OpenDriveMapElement() {
 
 }
 

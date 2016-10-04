@@ -1,7 +1,4 @@
 #include "opendrive_road_signal.hpp"
 
-OpenDriveRoadSignal::OpenDriveRoadSignal()
-{
-
-}
+OpenDriveRoadSignal::OpenDriveRoadSignal() : OpenDriveMapElement() { }
 

@@ -1,7 +1,5 @@
 #include "opendrive_road_object_tunnel.hpp"
 
-OpenDriveRoadObjectTunnel::OpenDriveRoadObjectTunnel()
-{
+OpenDriveRoadObjectTunnel::OpenDriveRoadObjectTunnel() : OpenDriveMapElement() {
 
 }
-

@@ -4,7 +4,7 @@
 // Project includes
 #include "opendrive_road.hpp"
 
-OpenDriveRoad::OpenDriveRoad() {
+OpenDriveRoad::OpenDriveRoad() : OpenDriveMapElement() {
 
 }
 

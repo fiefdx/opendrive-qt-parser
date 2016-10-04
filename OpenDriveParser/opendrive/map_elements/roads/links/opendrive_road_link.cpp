@@ -4,7 +4,7 @@
 // Project includes
 #include "opendrive_road_link.hpp"
 
-OpenDriveRoadLink::OpenDriveRoadLink() {
+OpenDriveRoadLink::OpenDriveRoadLink() : OpenDriveMapElement() {
 
 }
 

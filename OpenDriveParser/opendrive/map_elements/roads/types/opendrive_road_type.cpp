@@ -1,7 +1,4 @@
 #include "opendrive_road_type.hpp"
 
-OpenDriveRoadType::OpenDriveRoadType()
-{
-
-}
+OpenDriveRoadType::OpenDriveRoadType() : OpenDriveMapElement() { }
 

@@ -1,7 +1,3 @@
 #include "opendrive_road_object.hpp"
 
-OpenDriveRoadObject::OpenDriveRoadObject()
-{
-
-}
-
+OpenDriveRoadObject::OpenDriveRoadObject() : OpenDriveMapElement() { }
