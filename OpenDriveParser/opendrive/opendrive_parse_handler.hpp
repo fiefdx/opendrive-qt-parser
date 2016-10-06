@@ -29,13 +29,15 @@ class OpenDriveParseHandler : public QXmlDefaultHandler {
                           function_map_);
   OpenDriveRoad* get_last_added_road();
 
-  OpenDriveMap* map_; // we do not own this; do not delete it!
+  // we do not own the pointees below; do not delete them!
+  OpenDriveMap* map_;
   std::stack<OpenDriveMapElement*> last_link_parent_;
   std::stack<OpenDriveMapElement*> last_link_;
   std::stack<OpenDriveMapElement*> last_speed_parent_;
   std::stack<OpenDriveMapElement*> last_lane_parent_;
   std::stack<OpenDriveMapElement*> last_validity_parent_;
   std::stack<OpenDriveMapElement*> last_controller_parent_;
+  // we do not own the pointees above; do not delete them!
 };
 
 #endif // OPENDRIVEPARSEHANDLER_H

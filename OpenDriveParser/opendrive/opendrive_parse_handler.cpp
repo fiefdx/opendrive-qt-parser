@@ -11,6 +11,7 @@
 #include "opendrive/map_elements/opendrive_map_element.hpp"
 #include "opendrive/map_elements/roads/opendrive_road.hpp"
 #include "opendrive/map_elements/roads/lanes/lane/opendrive_road_lane.hpp"
+#include "opendrive/map_elements/roads/lanes/lane/link/opendrive_road_lane_link_predecessor.hpp"
 
 OpenDriveParseHandler::OpenDriveParseHandler(OpenDriveMap* map) :
   map_(map) {
@@ -27,10 +28,12 @@ bool OpenDriveParseHandler::startElement(const QString& namespaceURI,
   if (qName == "header") {
     map_->header_ = new OpenDriveMapHeader();
     set_map_elements(atts, map_->header_->function_map_);
+
   } else if (qName == "road") {
     map_->roads_.push_back(new OpenDriveRoad());
     last_link_parent_.push(map_->roads_.back());
     set_map_elements(atts, map_->roads_.back()->function_map_);
+
   } else if (qName == "link") {
     if (!last_link_parent_.size()) {
       qDebug() << "OpenDriveParseUtil: Found a link element with no valid "
@@ -48,7 +51,42 @@ bool OpenDriveParseHandler::startElement(const QString& namespaceURI,
                typeid(OpenDriveRoadLane*).hash_code()) {
       OpenDriveRoadLaneLink* new_link = new OpenDriveRoadLaneLink();
       static_cast<OpenDriveRoadLane*>(link_parent)->link_ = new_link;
+      last_link_.push(new_link);
     }
+
+  } else if (qName == "predecessor") {
+    OpenDriveMapElement* last_link = last_link_.top();
+
+    if (typeid(*last_link).hash_code() == typeid(OpenDriveRoadLink).hash_code()) {
+      OpenDriveRoadLinkPredecessor* predecessor =
+        new OpenDriveRoadLinkPredecessor();
+
+      set_map_elements(atts, predecessor->function_map_);
+      static_cast<OpenDriveRoadLink*>(last_link)->predecessor_ = predecessor;
+    } else if (typeid(*last_link).hash_code() ==
+               typeid(OpenDriveRoadLaneLink).hash_code()) {
+      OpenDriveRoadLaneLinkPredecessor* predecessor =
+        new OpenDriveRoadLaneLinkPredecessor();
+
+      set_map_elements(atts, predecessor->function_map_);
+      static_cast<OpenDriveRoadLaneLink*>(last_link)->predecessor_ = predecessor;
+    }
+
+  } else if (qName == "lanes") {
+    map_->roads_.back()->lanes_ = new OpenDriveRoadLanes();
+
+  } else if (qName == "laneOffset") {
+    OpenDriveRoadLaneOffset* lane_offset = new OpenDriveRoadLaneOffset();
+    set_map_elements(atts, lane_offset->function_map_);
+
+    map_->roads_.back()->lanes_->lane_offsets_.push_back(lane_offset);
+
+  } else if (qName == "laneSection") {
+    OpenDriveRoadLaneSection* lane_section = new OpenDriveRoadLaneSection();
+    set_map_elements(atts, lane_section->function_map_);
+
+    map_->roads_.back()->lanes_->lane_sections_.push_back(lane_section);
+
   } else {
     qDebug() << "Element name:" << qName;
 

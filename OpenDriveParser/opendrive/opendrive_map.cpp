@@ -28,5 +28,22 @@ void OpenDriveMap::print_map() {
 
   if (roads_.size()) {
     qDebug() << "Roads:" << roads_.size();
+
+    for (unsigned int i = 0; i < roads_.size(); i ++) {
+      qDebug() << " Road" << i << "\n"
+               << " name:" << roads_[i]->get_name() << "\n"
+               << " id:" << roads_[i]->get_id() << "\n"
+               << " length:" << roads_[i]->get_length();
+
+      if (roads_[i]->link_) {
+        qDebug() << "  Link:";
+
+        if (roads_[i]->link_->predecessor_) {
+         qDebug() << "  predecessor id:" << roads_[i]->link_
+                                                     ->predecessor_
+                                                     ->get_element_id();
+        }
+      }
+    }
   }
 }
